@@ -1,0 +1,26 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+}
+
+.dialogText {
+    background-color: darkseagreen;
+    border-radius: 10px;
+    text-align: center;
+}
+.dialogsItem {
+
+    padding:10px;
+}
+
+.dialog {
+
+}
+
+.messages {
+    padding:10px;
+}
+
+.message {
+
+}
