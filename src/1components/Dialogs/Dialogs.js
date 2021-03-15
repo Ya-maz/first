@@ -17,18 +17,32 @@ function Message(props) {
 }
 
 function Dialogs(){
+    let dialogsData = [
+        {id: 1, name:'Farhat'},
+        {id:2, name:'Rasul'},
+        {id:3, name:'Ignat'},
+        {id:4, name:'Golnur'}
+     ];
+
+    let messagesData = [
+        {id:1, message:'Farhat'},
+        {id:2, message:'Rasul'},
+        {id:3, message:'Ignat'},
+        {id:4, message:'Golnur'}
+    ];
+
     return (
         <div className={D.dialogs}>Dialogs
-            <DialogItem name={'Farhat'} id={'1'} />
-            <DialogItem name={'Rasul'} id={'2'} />
-            <DialogItem name={'Ignat'} id={'3'} />
-            <DialogItem name={'Golnur'} id={'4'} />
+            <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
+            <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
+            <DialogItem name={dialogsData[2].name} id={dialogsData[2].id} />
+            <DialogItem name={dialogsData[3].name} id={dialogsData[3].id} />
 
             <div className={D.messages}>Messages
-                <Message message={'Lorem insup'}/>
-                <Message message={'One of the most alarming forms of air pollution is acid rain'}/>
-                <Message message={'Acid rain is killing forests in Canada'}/>
-                <Message message={'The recent interest in crafts in America is not only a matter of economics'}/>
+                <Message message={messagesData[0].message}/>
+                <Message message={messagesData[1].message}/>
+                <Message message={messagesData[2].message}/>
+                <Message message={messagesData[3].message}/>
             </div>
         </div>
     )
