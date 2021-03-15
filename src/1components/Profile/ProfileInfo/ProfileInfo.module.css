@@ -1,9 +1,14 @@
-.profile {
+.profileInfo {
     grid-area: t;
 
     background-color: #f4ff93;
     border-radius: 10px;
 }
-.profile img {
+.profileInfo img {
     border-radius: 10px;
+    width:m;
+}
+
+.profileItem {
+    padding:10px;
 }

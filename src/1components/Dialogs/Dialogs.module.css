@@ -4,13 +4,13 @@
 }
 
 .dialogText {
-    background-color: darkseagreen;
-    border-radius: 10px;
-    text-align: center;
+    /*background-color: darkseagreen;*/
+    /*border-radius: 10px;*/
+    /*text-align: center;*/
 }
 .dialogsItem {
 
-    padding:10px;
+    /*padding:10px;*/
 }
 
 .dialog {
@@ -18,7 +18,7 @@
 }
 
 .messages {
-    padding:10px;
+    /*padding:10px;*/
 }
 
 .message {
