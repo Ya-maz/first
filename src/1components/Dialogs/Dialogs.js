@@ -17,6 +17,7 @@ function Message(props) {
 }
 
 function Dialogs(){
+
     let dialogsData = [
         {id: 1, name:'Farhat'},
         {id:2, name:'Rasul'},
@@ -31,6 +32,8 @@ function Dialogs(){
         {id:4, message:'Golnur'}
     ];
 
+    let dialogsElements = dialogsData
+        .map(dialog => <DialogItem name={dialogsData.name} id={dialogsData.id} />);
     return (
         <div className={D.dialogs}>Dialogs
             <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
