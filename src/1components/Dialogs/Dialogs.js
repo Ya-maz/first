@@ -19,7 +19,7 @@ function Message(props) {
 function Dialogs(){
 
     let dialogsData = [
-        {id: 1, name:'Farhat'},
+        {id:1, name:'Farhat'},
         {id:2, name:'Rasul'},
         {id:3, name:'Ignat'},
         {id:4, name:'Golnur'}
@@ -32,22 +32,20 @@ function Dialogs(){
         {id:4, message:'Golnur'}
     ];
 
-    let dialogsElements = dialogsData
-        .map(dialog => <DialogItem name={dialogsData.name} id={dialogsData.id} />);
-    return (
-        <div className={D.dialogs}>Dialogs
-            <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
-            <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
-            <DialogItem name={dialogsData[2].name} id={dialogsData[2].id} />
-            <DialogItem name={dialogsData[3].name} id={dialogsData[3].id} />
+    let dialogsElements = dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
+    let messagesElements = messagesData.map(message => <Message message={message.message}/>);
 
-            <div className={D.messages}>Messages
-                <Message message={messagesData[0].message}/>
-                <Message message={messagesData[1].message}/>
-                <Message message={messagesData[2].message}/>
-                <Message message={messagesData[3].message}/>
-            </div>
-        </div>
+    return (
+         <div className={D.dialogs}>
+             <div className={D.dialogsItem}>
+                 {dialogsElements}
+             </div>
+
+
+             <div className={D.messages}>Messages
+                {messagesElements}
+             </div>
+         </div>
     )
 }
 export default Dialogs;
