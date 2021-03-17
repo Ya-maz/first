@@ -1,14 +1,8 @@
 import M from './Mypost.module.css';
 import Post from './Post/Post.js';
 
-function Mypost(){
-    let postsData = [
-        {id:1, message:'One-two one-two, its a test', likescount:20},
-        {id:2, message:'Is it work?', likescount:200},
-
-    ];
-
-    let postsElemets = postsData.map(post => <Post message={post.message} like={post.likescount}/>)
+function Mypost(props){
+    let postsElemets = props.postsData.map(post => <Post message={post.message} like={post.likescount}/>)
     return (
         <div className={M.mypost}>
             <h3>My post</h3>

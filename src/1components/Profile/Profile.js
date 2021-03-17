@@ -2,11 +2,12 @@
 import Mypost from './Mypost/Mypost.js';
 import ProfileInfo from './ProfileInfo/ProfileInfo.js';
 
-function Profile(){
+function Profile(props){
+
     return (
         <div>
             <ProfileInfo />
-            <Mypost />
+            <Mypost postsData={props.postsData} />
         </div>
     )
 }
