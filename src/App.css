@@ -5,13 +5,17 @@
   grid-template-areas:
           "h h"
           "n d";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template:
+          [start] 'h h' 60px [row2]
+          [row2] 'n d' 1fr [row-end]/ 2fr 10fr;
   grid-gap: 5px;
 }
 
 .app-wrapper-dialogs {
   grid-area: d;
-  background-color: khaki;
+  display: grid;
+  background-color: white;
   border-radius: 10px;
+  border: solid 1px lightgreen;
+  padding: 10px;
 }

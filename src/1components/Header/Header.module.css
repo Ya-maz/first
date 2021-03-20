@@ -1,21 +1,29 @@
 .header {
+    display: grid;
     grid-area: h;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 60px 200px 60px;
-
     background-color: lightgreen;
     border-radius: 10px;
+    /*grid-template: [start] 'img name' 60px/ 1fr 6fr;*/
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 60px;
 }
 
 .header img {
-    border-radius: 10px;
-    background-color: yellow;
-
+    border-radius: 50px;
     width: 50px;
 
 }
+.logo {
+    margin: auto;
+}
 .name {
-    background-color: red;
+    font-size:2em;
+    text-transform:uppercase;
+    font-family:monospace;
+    font-weight:900;
+    align-self: center;
+    justify-self: center;
+    color: white;
 
 }
 
