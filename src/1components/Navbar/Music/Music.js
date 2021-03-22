@@ -1,6 +1,6 @@
 import M from './Music.module.css';
 
-function Music(){
+function Music() {
     return(
         <div className={M.music}>
             Music

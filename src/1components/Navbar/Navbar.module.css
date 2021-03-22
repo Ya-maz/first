@@ -1,5 +1,6 @@
 .navbar {
     grid-area: n;
+    display: grid;
     background-color: lightgreen;
     border-radius: 10px;
     padding:10px;
@@ -9,6 +10,39 @@
     color: white;
     text-decoration: none;
 }
+
 .item a.activeLink {
     color: #65A856;
 }
+
+.item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin: auto;
+    /*margin: 10px 10px 10px 13px;*/
+
+}
+
+.friends {
+    border-bottom: solid 1px white;
+}
+.logoFriends {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, auto));
+    grid-template-rows: mrepeat(2, 60px);
+}
+
+.logo1 {
+    grid-column: 1/2;
+}
+
+.logo2 {
+    grid-column: 2/3;
+}
+
+.logo1 {
+    grid-column: 3/4;
+}
+
+

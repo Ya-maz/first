@@ -7,7 +7,7 @@ import Dialogs from './1components/Navbar/Dialogs/Dialogs.js';
 import Music from './1components/Navbar/Music/Music.js';
 import News from './1components/Navbar/News/News.js';
 import Setting from "./1components/Navbar/Setting/Setting.js";
-// import Friends from
+import Friends from './1components/Navbar/Friends/Friends.js';
 
 function App(props) {
 
@@ -18,14 +18,18 @@ function App(props) {
               <Navbar />
               <div className={'app-wrapper-dialogs'}>
                 <Route path='/profile'
-                       render={ () => <Profile postsData={props.state.profile.postsData} />} />
+                       render={ () => <Profile postsData={props.state.profile.postsData}
+                                               addPost={props.addPost}
+                                               newPostText={props.state.profile.newPostText}
+                                               updateNewPostText={props.updateNewPostText} />} />
                 <Route path='/dialogs'
                        render={ () => <Dialogs dialogsData={props.state.message.dialogsData}
                                                messagesData={props.state.message.messagesData} />} />
                 <Route path='/music' render = { () => <Music />} />
                 <Route path='/news' render={ () => <News />} />
-                {/*<Route path='/friend' render={ () => <Friends />} />*/}
                 <Route path='/setting' render={ () => <Setting />} />
+                <Route path='/friends' render={ () => <Friends />} />
+
               </div>
           </div>
       </BrowserRouter>
