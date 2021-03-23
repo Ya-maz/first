@@ -3,17 +3,22 @@ import React from 'react'
 
 function Messages(props) {
     let addMessage = () => {
-     let text = newMessage.current.value;
+     let text = newMessageElement.current.value;
      alert(text);
     };
-    let newMessage = React.createRef();
+    let newMessageElement = React.createRef();
+
+    let onMessageChange = () => {
+        let text = newMessageElement.current.value;
+        props.saveInmessagesData(text);
+    }
 
     return (
         <div className={D.message}>{props.message}
 
 
         <div>
-         <textarea ref={newMessage}></textarea>
+         <textarea onChange={onMessageChange} ref={newMessageElement} />
         </div>
         <div>
          <button onClick={addMessage}>Send</button>

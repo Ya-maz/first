@@ -4,8 +4,9 @@ import DialogsItem from './DialogsItem/DialogsItem'
 
 function Dialogs(props){
 
-    let dialogsElements = props.dialogsData.map(dialog => <DialogsItem name={dialog.name} id={dialog.id} />);
-    let messagesElements = props.messagesData.map(message => <Messages message={message.message}/>);
+    let dialogsElements = props.dialogsData.map(dialog =>
+        <DialogsItem name={dialog.name} id={dialog.id} />);
+    // let messagesElements = props.messagesData.map(message => <Messages message={message.message}/>);
 
     return (
          <div className={D.dialogs}>
@@ -16,7 +17,9 @@ function Dialogs(props){
 
 
              <div className={D.messages}>  <h5>Messages</h5>
-               {messagesElements}
+                 <Messages  messagesData={props.messagesData}
+                            saveInmessagesData={props.saveInmessagesData} />
+               {/*{messagesElements}*/}
              </div>
          </div>
     )
