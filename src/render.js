@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {addPost, updateNewPostText, saveInmessagesData} from './reduxe/state';
+import {addPost, updateNewPostText, saveInmessagesData, addMessage} from './reduxe/state';
 
 export let rerenderEntireTree =(state) => {
 
@@ -13,7 +13,8 @@ export let rerenderEntireTree =(state) => {
             <App state={state}
                  addPost={addPost}
                  updateNewPostText={updateNewPostText}
-                 saveInmessagesData={saveInmessagesData} />
+                 saveInmessagesData={saveInmessagesData}
+                 addMessage={addMessage} />
 
     </React.StrictMode>,
         document.getElementById('root')

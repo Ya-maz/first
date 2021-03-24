@@ -25,7 +25,8 @@ function App(props) {
                 <Route path='/dialogs'
                        render={ () => <Dialogs dialogsData={props.state.message.dialogsData}
                                                messagesData={props.state.message.messagesData}
-                                               saveInmessagesData={props.saveInmessagesData} />} />
+                                               saveInmessagesData={props.saveInmessagesData}
+                                               addMessage={props.addMessage} />} />
                 <Route path='/music' render = { () => <Music />} />
                 <Route path='/news' render={ () => <News />} />
                 <Route path='/setting' render={ () => <Setting />} />

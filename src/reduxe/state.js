@@ -1,5 +1,7 @@
-import {rerenderEntireTree} from '../render'
 
+let rerenderEntireTree = () => {
+    console.log('it changed');
+}
 
 let state = {
     profile: {
@@ -47,6 +49,21 @@ export let saveInmessagesData = (newMessage) => {
     state.message.messagesData[0].message = newMessage;
     rerenderEntireTree(state);
 
+}
+
+export let addMessage = () => {
+    debugger;
+    let newMessage = {
+        id:1,
+        message:state.message.messagesData[0].message
+    }
+    state.message.messagesData.push(newMessage);
+    state.message.messagesData[0].message = '';
+    rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export default state;
