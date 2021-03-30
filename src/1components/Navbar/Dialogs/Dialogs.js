@@ -18,8 +18,7 @@ function Dialogs(props){
 
              <div className={D.messages}>  <h5>Messages</h5>
                  <Messages  messagesData={props.messagesData}
-                            saveInmessagesData={props.saveInmessagesData}
-                            addMessage={props.addMessage}/>
+                            dispatch={props.dispatch} />
                {/*{messagesElements}*/}
              </div>
          </div>

@@ -20,13 +20,11 @@ function App(props) {
               <div className={'app-wrapper-dialogs'}>
                 <Route path='/profile'
                        render = { () => <Profile postsData={props.state.profile.postsData}
-                                                 dispatch={props.dispatch}
-                                               updateNewPostText={props.updateNewPostText} />} />
+                                                 dispatch={props.dispatch}/>} />
                 <Route path='/dialogs'
                        render={ () => <Dialogs dialogsData={props.state.message.dialogsData}
                                                messagesData={props.state.message.messagesData}
-                                               saveInmessagesData={props.saveInmessagesData}
-                                               addMessage={props.addMessage} />} />
+                                               dispatch={props.dispatch}/>} />
                 <Route path='/music' render = { () => <Music />} />
                 <Route path='/news' render={ () => <News />} />
                 <Route path='/setting' render={ () => <Setting />} />
