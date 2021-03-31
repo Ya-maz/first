@@ -1,14 +1,14 @@
 
 import Mypost from './Mypost/Mypost.js';
 import ProfileInfo from './ProfileInfo/ProfileInfo.js';
-import store, {addPost, updateNewPostText} from "../../../reduxe/state";
+
 
 function Profile(props){
 
     return (
         <div>
             <ProfileInfo />
-            <Mypost postsData={props.postsData}
+            <Mypost profile={props.profile}
                     dispatch={props.dispatch} />
         </div>
     )

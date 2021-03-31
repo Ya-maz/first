@@ -19,11 +19,11 @@ function App(props) {
               <Navbar />
               <div className={'app-wrapper-dialogs'}>
                 <Route path='/profile'
-                       render = { () => <Profile postsData={props.state.profile.postsData}
+                       render = { () => <Profile profile={props.state.profile}
                                                  dispatch={props.dispatch}/>} />
                 <Route path='/dialogs'
                        render={ () => <Dialogs dialogsData={props.state.message.dialogsData}
-                                               messagesData={props.state.message.messagesData}
+                                               message={props.state.message}
                                                dispatch={props.dispatch}/>} />
                 <Route path='/music' render = { () => <Music />} />
                 <Route path='/news' render={ () => <News />} />

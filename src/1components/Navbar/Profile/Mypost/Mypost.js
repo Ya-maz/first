@@ -5,7 +5,7 @@ import {addPostActionCreater, updateNewPostTextActionCreater}
     from "../../../../reduxe/state";
 
 function Mypost(props){
-    let postsElemets = props.postsData.map(post => <Post message={post.message} like={post.likescount}/>)
+    let postsElemets = props.profile.postsData.map(post => <Post message={post.message} like={post.likescount}/>)
 
     let newPostElement = React.createRef();
 
@@ -25,7 +25,7 @@ function Mypost(props){
                     <div>
                         <textarea onChange={onPostChange}
                                   ref={newPostElement}
-                                  value={props.newPostText} />
+                                  value={props.profile.newPostText} />
                     </div>
                     <div>
                         <button onClick={addPost}>add post</button>

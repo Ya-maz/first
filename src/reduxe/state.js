@@ -66,6 +66,7 @@ let store = {
     },
 
     dispatch(action) {
+        debugger
         if (action.type === 'ADD-POST'){
             let newPost = {
                 id:5,
@@ -75,22 +76,25 @@ let store = {
             this._state.profile.postsData.push(newPost);
             this._state.profile.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+        }
+        else if (action.type === 'UPDATE-NEW-POST-TEXT'){
             this._state.profile.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === 'ADD-MESSAGE'){
-            debugger
-            let newMessage = {
-                id:1,
-                message:this._state.message.testMessage
-            }
-            this._state.message.messagesData.push(newMessage);
-            this._state.message.testMessage = 'n';
             this._callSubscriber(this._state);
         } else if (action.type === 'SAVE-IN-MESSAGES_DATA'){
             this._state.message.testMessage = action.newMessage;
             this._callSubscriber(this._state);
         }
+        else if (action.type === 'ADD-MESSAGE') {
+            debugger
+            let newMessage = {
+                id: 6,
+                message: this._state.message.testMessage
+            }
+            this._state.message.testMessage = '';
+            this._state.message.messagesData.push(newMessage);
+            this._callSubscriber(this._state);
+        }
+
 
     }
 }
