@@ -7,14 +7,14 @@ import {addPostActionCreater, updateNewPostTextActionCreater}
 function Mypost(props){
     let postsElemets = props.profile.postsData.map(post => <Post message={post.message} like={post.likescount}/>)
 
-    let newPostElement = React.createRef();
+    // let newPostElement = React.createRef();
 
     let addPost = () => {
         props.dispatch(addPostActionCreater());
     };
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
+    let onPostChange = (e) => {
+        let text = e.target.value;
         let action = updateNewPostTextActionCreater(text);
         props.dispatch(action);
     }
@@ -24,7 +24,8 @@ function Mypost(props){
                 <div className={M.newPost}>
                     <div>
                         <textarea onChange={onPostChange}
-                                  ref={newPostElement}
+                                  // ref={newPostElement}
+                                  placeholder={'enter new post'}
                                   value={props.profile.newPostText} />
                     </div>
                     <div>
