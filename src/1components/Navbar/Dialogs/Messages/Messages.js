@@ -9,16 +9,15 @@ function Messages(props) {
         id={message.id}
         message={message.message} />)
     let testMessage = props.message.testMessage
-    debugger
-
     // let newMessageElement = React.createRef();
     let addMessage = () => {
     props.dispatch(addMessageCreateAction());
     };
     let onMessageChange = (e) => {
+        debugger
         let text = e.target.value
-        // let action = saveInmessagesDataCreateAction(text)
-        props.dispatch(saveInmessagesDataCreateAction(text));
+        let action = saveInmessagesDataCreateAction(text)
+        props.dispatch(action);
     }
 
     return (

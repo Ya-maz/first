@@ -5,14 +5,13 @@ import {addPostActionCreater, updateNewPostTextActionCreater}
     from "../../../../reduxe/state";
 
 function Mypost(props){
-    let postsElemets = props.profile.postsData.map(post => <Post message={post.message} like={post.likescount}/>)
-
+    debugger
+    let postsElemets = props.profile.postsData.map(post =>
+        <Post message={post.message} like={post.likescount}/>)
     // let newPostElement = React.createRef();
-
     let addPost = () => {
         props.dispatch(addPostActionCreater());
     };
-
     let onPostChange = (e) => {
         let text = e.target.value;
         let action = updateNewPostTextActionCreater(text);

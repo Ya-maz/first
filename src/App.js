@@ -11,7 +11,7 @@ import Friends from './1components/Navbar/Friends/Friends.js';
 import store from "./reduxe/state";
 
 function App(props) {
-
+debugger
   return (
       <BrowserRouter>
           <div className={'app-wrapper'}>
@@ -22,7 +22,8 @@ function App(props) {
                        render = { () => <Profile profile={props.state.profile}
                                                  dispatch={props.dispatch}/>} />
                 <Route path='/dialogs'
-                       render={ () => <Dialogs dialogsData={props.state.message.dialogsData}
+                       render={ () => <Dialogs
+                           // dialogsData={props.state.message.dialogsData}
                                                message={props.state.message}
                                                dispatch={props.dispatch}/>} />
                 <Route path='/music' render = { () => <Music />} />
