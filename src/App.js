@@ -11,7 +11,6 @@ import Friends from './1components/Navbar/Friends/Friends.js';
 import store from "./reduxe/state";
 
 function App(props) {
-debugger
   return (
       <BrowserRouter>
           <div className={'app-wrapper'}>

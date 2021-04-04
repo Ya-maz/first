@@ -1,7 +1,7 @@
 import D from './../Dialogs.module.css';
 import React from 'react'
 import TextMessage from "./TextMessage/TextMessage";
-import {addMessageCreateAction, saveInmessagesDataCreateAction} from "../../../../reduxe/state";
+import {addMessageCreateAction, saveInmessagesDataCreateAction} from "../../../../reduxe/messageReducer";
 
 function Messages(props) {
     let textMessageElement = props.message.messagesData.map(message =>
@@ -9,7 +9,6 @@ function Messages(props) {
         id={message.id}
         message={message.message} />)
     let testMessage = props.message.testMessage
-    // let newMessageElement = React.createRef();
     let addMessage = () => {
     props.dispatch(addMessageCreateAction());
     };
@@ -18,15 +17,14 @@ function Messages(props) {
         let action = saveInmessagesDataCreateAction(text)
         props.dispatch(action);
     }
-
     return (
         <div className={D.message}>
             {textMessageElement}
         <div>
          <textarea onChange={onMessageChange}
-                   // ref={newMessageElement}
                    placeholder={'enter new message'}
-                   value={testMessage}/>
+                   value={testMessage}
+         />
         </div>
         <div>
          <button onClick={addMessage}>Send</button>
