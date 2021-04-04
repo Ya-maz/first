@@ -69,10 +69,9 @@ let store = {
 
     dispatch(action) {
 
-        this._state.message = messageReducer (this._state.message, action)
+        // this._state.message = messageReducer (this._state.message, action)
         this._state.profile = profileReducer (this._state.profile, action)
         this._callSubscriber(this._state);
-        debugger
         // if (action.type === 'ADD-POST'){
         //     let newPost = {
         //         id:5,
@@ -87,31 +86,21 @@ let store = {
         //     this._state.profile.newPostText = action.newText;
         //     this._callSubscriber(this._state);
         // }
-        // else if (action.type === 'SAVE-IN-MESSAGES_DATA'){
-        //     this._state.message.testMessage = action.newMessage;
-        //     this._callSubscriber(this._state);
-        // }
-        // else if (action.type === 'ADD-MESSAGE') {
-        //     debugger
-        //     let newMessage = {
-        //         id: 6,
-        //         message: this._state.message.testMessage
-        //     }
-        //     this._state.message.testMessage = '';
-        //     this._state.message.messagesData.push(newMessage);
-        //     this._callSubscriber(this._state);
-        // }
+        if (action.type === 'SAVE-IN-MESSAGES_DATA'){
+            this._state.message.testMessage = action.newMessage;
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 6,
+                message: this._state.message.testMessage
+            }
+            this._state.message.testMessage = '';
+            this._state.message.messagesData.push(newMessage);
+            this._callSubscriber(this._state);
+        }
     }
 }
-
-export const addPostActionCreater = () => {
-    return {type: 'ADD-POST'}
-}
-
-export const updateNewPostTextActionCreater = (text) => {
-    return {type: 'UPDATE-NEW-POST-TEXT', newText: text}
-}
-
 export const saveInmessagesDataCreateAction = (text) => {
     return {type: 'SAVE-IN-MESSAGES_DATA', newMessage: text}
 }

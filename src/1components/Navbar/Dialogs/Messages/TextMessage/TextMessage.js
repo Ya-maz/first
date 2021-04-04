@@ -7,7 +7,7 @@ function TextMessage(props) {
         <div className={TM.message}>
             {props.message}
             <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTgUKf-cPiX6IhnJR9s5AGRJMyKCwZsQPBEg&usqp=CAU'} />
-               <div>time</div>
+               <div>{Date.now()}</div>
         </div>
     )
 }

@@ -14,7 +14,6 @@ function Messages(props) {
     props.dispatch(addMessageCreateAction());
     };
     let onMessageChange = (e) => {
-        debugger
         let text = e.target.value
         let action = saveInmessagesDataCreateAction(text)
         props.dispatch(action);
@@ -26,7 +25,7 @@ function Messages(props) {
         <div>
          <textarea onChange={onMessageChange}
                    // ref={newMessageElement}
-                    placeholder={'enter new messaga'}
+                   placeholder={'enter new message'}
                    value={testMessage}/>
         </div>
         <div>

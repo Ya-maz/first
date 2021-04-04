@@ -2,7 +2,7 @@ import React from 'react'
 import M from './Mypost.module.css';
 import Post from './Post/Post.js';
 import {addPostActionCreater, updateNewPostTextActionCreater}
-    from "../../../../reduxe/state";
+    from "../../../../reduxe/profileReducer";
 
 function Mypost(props){
     debugger

@@ -7,7 +7,7 @@ const messageReducer = (state, action) => {
         let body = state.testMessage;
         state.testMessage = '';
         state.messagesData.push({id: 6, message: body})
-        } else if (action.type === 'SAVE-IN-MESSAGES-DATA') {
+        } else if (action.type === SAVE_IN_MESSAGES_DATA) {
         state.testMessage = action.newMessage;
         }
     return state;
