@@ -1,34 +1,29 @@
 import React from 'react'
 import M from './Mypost.module.css';
 import Post from './Post/Post.js';
-import {addPostActionCreater, updateNewPostTextActionCreater}
-    from "../../../../reduxe/profileReducer";
 
-function Mypost(props){
-    debugger
-    let postsElemets = props.profile.postsData.map(post =>
+let Mypost = (props) => {
+    let postsElemets = props.postsData.map(post =>
         <Post message={post.message} like={post.likescount}/>)
-    // let newPostElement = React.createRef();
-    let addPost = () => {
-        props.dispatch(addPostActionCreater());
+    let onAddPost = () => {
+        props.addPost()
     };
-    let onPostChange = (e) => {
+    let onChangePost = (e) => {
         let text = e.target.value;
-        let action = updateNewPostTextActionCreater(text);
-        props.dispatch(action);
+        props.updateNewPostText(text)
     }
     return (
         <div className={M.mypost}>
             <h3>My post</h3>
                 <div className={M.newPost}>
                     <div>
-                        <textarea onChange={onPostChange}
+                        <textarea onChange={onChangePost}
                                   // ref={newPostElement}
                                   placeholder={'enter new post'}
-                                  value={props.profile.newPostText} />
+                                  value={props.newPostText} />
                     </div>
                     <div>
-                        <button onClick={addPost}>add post</button>
+                        <button onClick={onAddPost}>add post</button>
                     </div>
                     <div>
                         <button>remove</button>

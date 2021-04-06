@@ -8,9 +8,9 @@ import Music from './1components/Navbar/Music/Music.js';
 import News from './1components/Navbar/News/News.js';
 import Setting from "./1components/Navbar/Setting/Setting.js";
 import Friends from './1components/Navbar/Friends/Friends.js';
-import store from "./reduxe/state";
 
 function App(props) {
+    debugger
   return (
       <BrowserRouter>
           <div className={'app-wrapper'}>
@@ -18,11 +18,16 @@ function App(props) {
               <Navbar />
               <div className={'app-wrapper-dialogs'}>
                 <Route path='/profile'
-                       render = { () => <Profile profile={props.state.profile}
-                                                 dispatch={props.dispatch}/>} />
+                       render = { () => <Profile
+                                                 // profile={props.state.profile}
+                                                 // dispatch={props.dispatch}
+                                                 store={props.store}
+                                        />}
+                />
                 <Route path='/dialogs'
                        render={ () => <Dialogs
                            // dialogsData={props.state.message.dialogsData}
+                                               store={props.store}
                                                message={props.state.message}
                                                dispatch={props.dispatch}/>} />
                 <Route path='/music' render = { () => <Music />} />
